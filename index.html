@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Light of the World</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4b79a1, #283e51);
+            padding: 20px;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .site-title h1 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .site-title p {
+            font-size: 14px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 35px 30px;
+            border-radius: 18px;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.9s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* LOGO */
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
+
+        .login-container h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .login-container h3 {
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .input-group {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #e3e3e3;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 6px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.28);
+            color: #fff;
+        }
+
+        .input-group input::placeholder {
+            color: #d6d6d6;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 13px;
+            margin-top: 25px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #004fcc;
+        }
+
+        .forgot {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .forgot a {
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        
+        <div class="site-title">
+            <h1>Light of the World</h1>
+            <p>God First • Faith • Service • Technology</p>
+        </div>
+
+       
+        <div class="login-container">
+
+           
+            <img class="logo"
+                 src="image/login.jpg"
+                 alt="Logo">
+
+            <h2>Una ang Ginoo</h2>
+            
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input id="username" type="text" placeholder="Enter your username" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input id="password" type="password" placeholder="Enter your password" required>
+                </div>
+
+                <button class="btn-login" type="submit">Login</button>
+
+                <div class="forgot">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <div id="msg" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const sampleUser = "admin";
+        const samplePass = "12345";
+
+        const form = document.getElementById("loginForm");
+        const msg = document.getElementById("msg");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if (user === sampleUser && pass === samplePass) {
+                msg.style.color = "lightgreen";
+                msg.textContent = "Login Successful! Redirecting...";
+
+                setTimeout(() => {
+                    window.location.href = "dashboard.html";
+                }, 1500);
+            } else {
+                msg.style.color = "red";
+                msg.textContent = "Invalid username or password!";
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Service & Advocacy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4b79a1, #283e51);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .content-box {
+            width: 90%;
+            max-width: 900px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 35px rgba(0,0,0,0.3);
+            animation: fadeIn 0.9s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;      /* medium width */
+            height: 350px;         /* fixed height for medium box */
+            margin: 30px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Navigation arrows */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 12px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 50%;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* Dots */
+        .dots-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: #0d6efd;
+        }
+
+        /* Back button */
+        .back-btn {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #fff;
+            color: #283e51;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #dce4ec;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 20px; }
+            p { font-size: 16px; }
+            .slideshow-container { height: 250px; }
+        }
+          .menu-buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .menu-btn {
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            background: #0d6efd;
+            color: #fff;
+            transition: 0.3s;
+            min-width: 220px;
+        }
+
+        .menu-btn:hover {
+            background: #004fcc;
+        }
+
+        .logout-btn {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #dc3545;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #b92c38;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        <h1>Community Service & Advocacy</h1>
+        <h2>Community Service</h2>
+        <p>
+            This section promotes community and church initiatives such as charity programs, 
+            outreach activities, and environmental campaigns that help others.
+        </p>
+
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <img class="slides" src="image/service1.jpg" alt="Community Service 1">
+            <img class="slides" src="image/service2.jpg" alt="Community Service 2">
+            <img class="slides" src="image/service3.jpg" alt="Community Service 3">
+            <img class="slides" src="image/service4.jpg" alt="Community Service 4">
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+         <div class="dropdown">
+        <button class="btn menu-btn">Menu ▾</button>
+        <div class="dropdown-content">
+            <a href="home.html">Home</a>
+            <a href="personal_reflection.html">Personal Reflection</a>
+            <a href="community_service.html">Community Service</a>
+            <a href="inspirational.html">Inspirational Portfolio</a>
+            <a href="educational.html">Educational</a>
+            <a href="faith-tech.html">Faith & Technology</a>
+        </div>
+    </div>
+
+    <button class="btn logout-btn" onclick="window.location.href='index.html'">
+        Logout
+    </button>
+</div>
+
+<style>
+/* General Button */
+.btn {
+    padding: 14px 25px;
+    font-size: 17px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+    min-width: 180px;
+}
+
+/* Back and Logout Buttons */
+.back-btn { background: #6c757d; }
+.back-btn:hover { background: #565e64; }
+
+.logout-btn { background: #dc3545; }
+.logout-btn:hover { background: #b92c38; }
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-btn {
+    background: #0d6efd;
+}
+.menu-btn:hover {
+    background: #004fcc;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    min-width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 1000;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+
+
+        
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Auto slideshow every 5 seconds
+        setInterval(() => { plusSlides(1); }, 5000);
+    </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #4b79a1, #283e51);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .dashboard-box {
+            width: 80%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 35px rgba(0,0,0,0.3);
+            animation: fadeIn 0.9s ease;
+            text-align: center;
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .menu-buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .menu-btn {
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            background: #0d6efd;
+            color: #fff;
+            transition: 0.3s;
+            min-width: 220px;
+        }
+
+        .menu-btn:hover {
+            background: #004fcc;
+        }
+
+        .logout-btn {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #dc3545;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #b92c38;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-box">
+        <h1>Welcome to the Dashboard</h1>
+         <p>Select a category to continue</p>
+        
+        
+
+        <div class="menu-buttons">
+            <button class="menu-btn" onclick="location.href='home.html'">
+               Home
+            </button>
+
+            <button class="menu-btn" onclick="location.href='personal_reflection.html'">
+                Personal Reflection
+            </button>
+
+            <button class="menu-btn" onclick="location.href='community_service.html'">
+                Community Service
+            </button>
+
+            <button class="menu-btn" onclick="location.href='inspirational.html'">
+                Inspirational Portfolio
+            </button>
+
+            <button class="menu-btn" onclick="location.href='educational.html'">
+                Educational
+            </button>
+
+            <button class="menu-btn" onclick="location.href='faith-tech.html'">
+                Faith & Technology
+            </button>
+        </div>
+
+        <button class="logout-btn" onclick="window.location.href='index.html'">
+            Logout
+        </button>
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational | Light of the World</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #4b79a1, #283e51);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+    }
+
+    .content-box {
+        width: 90%;
+        max-width: 900px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 35px rgba(0,0,0,0.3);
+        animation: fadeIn 0.9s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+        font-weight: 400;
+        opacity: 0.95;
+    }
+
+    p {
+        font-size: 19px;
+        line-height: 1.7;
+        opacity: 0.95;
+        margin-bottom: 30px;
+    }
+
+    /* IMAGE SECTION - Medium Box */
+    .image-box {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0;
+    }
+
+    .image-box img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-box img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Dropdown and Buttons */
+    .btn-group {
+        margin-top: 25px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 14px 25px;
+        font-size: 17px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        color: #fff;
+        transition: 0.3s;
+        min-width: 180px;
+    }
+
+    .btn:hover { opacity: 0.9; }
+
+    .back-btn { background: #6c757d; }
+    .back-btn:hover { background: #565e64; }
+
+    .logout-btn { background: #dc3545; }
+    .logout-btn:hover { background: #b92c38; }
+
+    /* Dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .menu-btn {
+        background: #0d6efd;
+    }
+    .menu-btn:hover { background: #004fcc; }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.95);
+        min-width: 220px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 1000;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 20px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+    .dropdown:hover .dropdown-content { display: block; }
+
+    @media (max-width: 600px) {
+        h1 { font-size: 36px; }
+        h2 { font-size: 22px; }
+        p { font-size: 17px; }
+        .image-box img { max-width: 90%; }
+    }
+</style>
+</head>
+<body>
+
+<div class="content-box">
+    <h1>Educational: Digital Ethics</h1>
+    <h2>Digital Ethics</h2>
+    <p>
+        Ethical digital practices include honesty, respect, and online kindness. 
+        Responsible digital citizens use technology wisely and with integrity.
+    </p>
+
+   
+    <div class="image-box">
+        <img src="image/educational.jpg" alt="Digital Ethics">
+    </div>
+
+    
+    <div class="btn-group">
+        <div class="dropdown">
+            <button class="btn menu-btn">Menu ▾</button>
+            <div class="dropdown-content">
+                <a href="home.html">Home</a>
+                <a href="personal_reflection.html">Personal Reflection</a>
+                <a href="community_service.html">Community Service</a>
+                <a href="inspirational.html">Inspirational Portfolio</a>
+                <a href="educational.html">Educational</a>
+                <a href="faith-tech.html">Faith & Technology</a>
+            </div>
+        </div>
+
+        <button class="btn logout-btn" onclick="window.location.href='index.html'">
+            Logout
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faith & Technology | Light of the World</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #4b79a1, #283e51);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+    }
+
+    .content-box {
+        width: 90%;
+        max-width: 900px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 35px rgba(0,0,0,0.3);
+        animation: fadeIn 0.9s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        font-size: 46px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+        font-weight: 400;
+        opacity: 0.95;
+    }
+
+    p {
+        font-size: 19px;
+        line-height: 1.7;
+        opacity: 0.95;
+        margin-bottom: 30px;
+    }
+
+    /* IMAGE SECTION - Medium Box */
+    .image-box {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0;
+    }
+
+    .image-box img {
+        width: 100%;
+        max-width: 500px; /* medium size */
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-box img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .menu-btn {
+        padding: 14px 25px;
+        font-size: 17px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background: #0d6efd;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .menu-btn:hover {
+        background: #004fcc;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.95);
+        min-width: 220px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 1000;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 20px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Logout Button */
+    .logout-btn {
+        margin-top: 25px;
+        padding: 12px 25px;
+        background: #dc3545;
+        border: none;
+        border-radius: 12px;
+        color: #fff;
+        font-size: 17px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+        background: #b92c38;
+    }
+
+    @media (max-width: 600px) {
+        h1 { font-size: 36px; }
+        h2 { font-size: 22px; }
+        p { font-size: 17px; }
+        .image-box img { max-width: 90%; }
+    }
+
+</style>
+</head>
+<body>
+
+<div class="content-box">
+    <h1>Faith and Technology Integration</h1>
+    <h2>Faith & Technology</h2>
+    <p>
+        Technology can be used to spread hope, encouragement, and faith. 
+        When guided by values, digital platforms become tools for inspiration and service.
+    </p>
+
+    <!-- Medium Image -->
+    <div class="image-box">
+        <img src="image/faith.jpg" alt="Faith & Technology">
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+        <button class="btn menu-btn">Menu ▾</button>
+        <div class="dropdown-content">
+            <a href="home.html">Home</a>
+            <a href="personal_reflection.html">Personal Reflection</a>
+            <a href="community_service.html">Community Service</a>
+            <a href="inspirational.html">Inspirational Portfolio</a>
+            <a href="educational.html">Educational</a>
+            <a href="faith-tech.html">Faith & Technology</a>
+        </div>
+    </div>
+
+    <!-- Logout Button -->
+    <button class="btn logout-btn" onclick="window.location.href='index.html'">Logout</button>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Light of the World</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #4b79a1, #283e51);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+    }
+
+    .home-box {
+        width: 90%;
+        max-width: 900px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 35px rgba(0,0,0,0.3);
+        text-align: center;
+        animation: fadeIn 0.9s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        font-size: 46px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-weight: 400;
+        opacity: 0.95;
+    }
+
+    p {
+        font-size: 19px;
+        line-height: 1.7;
+        opacity: 0.95;
+        margin-bottom: 30px;
+    }
+
+   
+    .image-box {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0;
+    }
+
+    .image-box img {
+        width: 100%;
+        max-width: 500px;  /* medium size */
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-box img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .menu-btn {
+        padding: 14px 25px;
+        font-size: 17px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background: #0d6efd;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .menu-btn:hover {
+        background: #004fcc;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.95);
+        min-width: 220px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 1000;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 20px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .logout-btn {
+        margin-top: 25px;
+        padding: 12px 25px;
+        background: #dc3545;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 17px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+        background: #b92c38;
+    }
+
+    @media (max-width: 600px) {
+        h1 { font-size: 36px; }
+        h2 { font-size: 22px; }
+        p { font-size: 17px; }
+        .image-box img { max-width: 90%; }
+    }
+</style>
+</head>
+<body>
+
+<div class="home-box">
+    <h1>Welcome to my Website</h1>
+    <h2>🌟 Light of the World 🌟</h2>
+
+    <p>
+        This website reflects the values of <strong>“Una ang Ginoo”</strong> and 
+        <strong>“Light of the World.”</strong>  
+        It demonstrates how technology can inspire and uplift others when guided by faith.
+    </p>
+
+    <div class="image-box">
+        <img src="image/home.jpg" alt="Light of the World">
+    </div>
+
+    <div class="dropdown">
+        <button class="btn menu-btn">Menu ▾</button>
+        <div class="dropdown-content">
+            <a href="home.html">Home</a>
+            <a href="personal_reflection.html">Personal Reflection</a>
+            <a href="community_service.html">Community Service</a>
+            <a href="inspirational.html">Inspirational Portfolio</a>
+            <a href="educational.html">Educational</a>
+            <a href="faith-tech.html">Faith & Technology</a>
+        </div>
+    </div>
+
+    <button class="btn logout-btn" onclick="window.location.href='index.html'">
+        Logout
+    </button>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspirational Portfolio | Light of the World</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #4b79a1, #283e51);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #fff;
+    }
+
+    .content-box {
+        width: 90%;
+        max-width: 900px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 35px rgba(0,0,0,0.3);
+        animation: fadeIn 0.9s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        font-size: 46px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+        font-weight: 400;
+        opacity: 0.95;
+    }
+
+    p {
+        font-size: 19px;
+        line-height: 1.7;
+        opacity: 0.95;
+        margin-bottom: 30px;
+    }
+
+    /* IMAGE SECTION - Medium Box */
+    .image-box {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0;
+    }
+
+    .image-box img {
+        width: 100%;
+        max-width: 500px;  /* medium size */
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-box img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .menu-btn {
+        padding: 14px 25px;
+        font-size: 17px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background: #0d6efd;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .menu-btn:hover { background: #004fcc; }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.95);
+        min-width: 220px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        z-index: 1000;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 20px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+    .dropdown:hover .dropdown-content { display: block; }
+
+    .logout-btn {
+        margin-top: 25px;
+        padding: 12px 25px;
+        background: #dc3545;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 17px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .logout-btn:hover { background: #b92c38; }
+
+    @media (max-width: 600px) {
+        h1 { font-size: 36px; }
+        h2 { font-size: 22px; }
+        p { font-size: 17px; }
+        .image-box img { max-width: 90%; }
+    }
+</style>
+</head>
+<body>
+
+<div class="content-box">
+    <h1>Inspirational Portfolio</h1>
+    <h2>Portfolio</h2>
+    <p>
+        This portfolio highlights my goals, talents, and guiding values. 
+        Through faith and technology, I aim to make a positive difference in the digital world.
+    </p>
+
+    <!-- Medium Image -->
+    <div class="image-box">
+        <img src="image/inspirational.jpg" alt="Inspirational Portfolio">
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+        <button class="btn menu-btn">Menu ▾</button>
+        <div class="dropdown-content">
+            <a href="home.html">Home</a>
+            <a href="personal_reflection.html">Personal Reflection</a>
+            <a href="community_service.html">Community Service</a>
+            <a href="inspirational.html">Inspirational Portfolio</a>
+            <a href="educational.html">Educational</a>
+            <a href="faith-tech.html">Faith & Technology</a>
+        </div>
+    </div>
+
+    <button class="btn logout-btn" onclick="window.location.href='index.html'">
+        Logout
+    </button>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Reflection | Light of the World</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4b79a1, #283e51);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .content-box {
+            width: 90%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 35px rgba(0,0,0,0.3);
+            animation: fadeIn 0.9s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.7;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        /* IMAGE SECTION */
+        .image-box {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 500px; /* Medium size */
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        /* BUTTONS AND DROPDOWN */
+        .btn-group {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 25px;
+            font-size: 17px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            color: #fff;
+            transition: 0.3s;
+            min-width: 180px;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        .back-btn { background: #6c757d; }
+        .back-btn:hover { background: #565e64; }
+
+        .logout-btn { background: #dc3545; }
+        .logout-btn:hover { background: #b92c38; }
+
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-btn {
+            background: #0d6efd;
+        }
+        .menu-btn:hover { background: #004fcc; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.95);
+            min-width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 1000;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 22px; }
+            p { font-size: 17px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        <h1>Personal Reflection</h1>
+        <h2>Personal Reflection</h2>
+        <p>
+            Being the Light of the World means choosing integrity, kindness, and respect. 
+            Even in the digital space, our actions should reflect our values and faith.
+        </p>
+
+        <div class="image-box">
+            <img src="image/personal.jpg" alt="Personal Reflection">
+        </div>
+
+      
+        <div class="btn-group">
+            <div class="dropdown">
+                <button class="btn menu-btn">Menu ▾</button>
+                <div class="dropdown-content">
+                    <a href="home.html">Home</a>
+                    <a href="personal_reflection.html">Personal Reflection</a>
+                    <a href="community_service.html">Community Service</a>
+                    <a href="inspirational.html">Inspirational Portfolio</a>
+                    <a href="educational.html">Educational</a>
+                    <a href="faith-tech.html">Faith & Technology</a>
+                </div>
+            </div>
+
+           
+            <button class="btn logout-btn" onclick="window.location.href='index.html'">
+                Logout
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
